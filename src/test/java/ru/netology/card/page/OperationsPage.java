@@ -34,9 +34,17 @@ public class OperationsPage {
 
     public void errorLimit() {
         $("[data-test-id=error-notification]").should(Condition.exactText("Ошибка"));
-     }
+    }
  
     public void invalidCard() {
         $("[data-test-id=error-notification]").should(Condition.text("Ошибка! "));
+    }
+
+    private void verifyErrorNotification(String expectedText, boolean exact) {
+    if (exact) {
+        errorNotification.shouldHave(Condition.exactText(expectedText));
+    } else {
+        errorNotification.shouldHave(Condition.text(expectedText));
+    }
     }
 }
