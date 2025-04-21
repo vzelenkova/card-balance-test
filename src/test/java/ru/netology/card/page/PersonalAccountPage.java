@@ -14,10 +14,10 @@ import static com.codeborne.selenide.Selenide.$$;
         private ElementsCollection cards = $$(".list__item div");
         private final String balanceStart = "баланс: ";
         private final String balanceFinish = " р.";
-        private final SelenideElement heading = $("[data-test-id=dashboard]").shouldBe(Condition.visible);;
+        private final SelenideElement heading = $("[data-test-id=dashboard]");
 
         public PersonalAccountPage() {
-            heading.shouldBe(Condition.visible);
+            heading.shouldBe(visible);
         }
 
         public int getCardBalance(int index) {
