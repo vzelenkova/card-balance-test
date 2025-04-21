@@ -8,16 +8,16 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class OperationsPage {
-    private final SelenideElement transferButton = $("[data-test-id='action-transfer']").shouldBe(Condition.visible);;
-    private final SelenideElement amountInput = $("[data-test-id='amount'] input").shouldBe(Condition.visible);;
-    private final SelenideElement fromInput = $("[data-test-id='from'] input").shouldBe(Condition.visible);;
+    private final SelenideElement transferButton = $("[data-test-id='action-transfer']");
+    private final SelenideElement amountInput = $("[data-test-id='amount'] input");
+    private final SelenideElement fromInput = $("[data-test-id='from'] input");
     private final SelenideElement transferHead = $(byText("Пополнение карты"));
-    private final SelenideElement errorNotification = $("[data-test-id=error-notification]").shouldBe(Condition.visible);;
-    private final SelenideElement errorButton = $("[data-test-id=error-notification] button").shouldBe(Condition.visible);;
+    private final SelenideElement errorNotification = $("[data-test-id=error-notification]");
+    private final SelenideElement errorButton = $("[data-test-id=error-notification] button");
 
 
     public OperationsPage() {
-        transferHead.shouldBe(Condition.visible);
+        transferHead.shouldBe(visible);
     }
 
     public LoginPage makeValidTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
