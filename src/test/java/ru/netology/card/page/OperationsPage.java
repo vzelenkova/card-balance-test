@@ -32,11 +32,11 @@ public class OperationsPage {
         transferButton.click();
     }
 
-    public void verifyErrorNotification(String expectedText, boolean exactMatch) {
-        if (exactMatch) {
-            errorNotification.shouldHave(Condition.exactText(expectedText));
-        } else {
-            errorNotification.shouldHave(Condition.text(expectedText));
-        }
+    public void errorLimit() {
+        $("[data-test-id=error-notification]").should(Condition.exactText("Ошибка"));
+     }
+ 
+    public void invalidCard() {
+        $("[data-test-id=error-notification]").should(Condition.text("Ошибка! "));
     }
 }
