@@ -1,6 +1,7 @@
 package ru.netology.card.page;
 
 import com.codeborne.selenide.Condition;
+import static com.codeborne.selenide.Condition.visible;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.card.data.DataHelper;
 
@@ -17,7 +18,7 @@ public class OperationsPage {
 
 
     public OperationsPage() {
-        transferHead.shouldBe(Condition.visible);
+        transferHead.shouldBe(visible);
     }
 
     public LoginPage makeValidTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
