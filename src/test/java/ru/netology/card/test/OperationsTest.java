@@ -74,6 +74,8 @@ public class OperationsTest {
 
         assertEquals(firstCardBalance, actualBalanceFirstCard);
         assertEquals(secondCardBalance, actualBalanceSecondCard);
+
+        transferPage.checkErrorNotification("Ошибка");
     }
 
 }
