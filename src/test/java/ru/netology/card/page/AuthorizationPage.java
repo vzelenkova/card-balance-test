@@ -7,11 +7,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AuthorizationPage {
-        private SelenideElement codeField = $("[data-test-id=code] input").shouldBe(Condition.visible);
-        private SelenideElement verifyButton = $("[data-test-id=action-verify]").shouldBe(Condition.visible);
+        private SelenideElement codeField = $("[data-test-id=code] input");
+        private SelenideElement verifyButton = $("[data-test-id=action-verify]");
 
         public AuthorizationPage() {
-            codeField.shouldBe(Condition.visible);
+            codeField.shouldBe(visible);
         }
 
         public PersonalAccountPage validVerify(DataHelper.VerificationCode verificationCode) {
