@@ -68,6 +68,9 @@ public class OperationsTest {
         var amount = generateInvalidAmount(personalAccountPage.getCardBalance(0));
         var transferPage = personalAccountPage.selectCardToTransfer(secondCardInfo);
         loginPage = transferPage.makeValidTransfer(String.valueOf(amount), firstCardInfo);
+        transferPage.verifyErrorNotification("Ошибка", true);
+        operationsPage.verifyErrorNotification("Ошибка! ", false);
+        
         var actualBalanceFirstCard = personalAccountPage.getCardBalance(0);
         var actualBalanceSecondCard = personalAccountPage.getCardBalance(1);
 
