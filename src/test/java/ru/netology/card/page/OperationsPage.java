@@ -17,7 +17,7 @@ public class OperationsPage {
 
 
     public OperationsPage() {
-        transferHead.shouldBe(visible);
+        transferHead.shouldBe(Condition.visible);
     }
 
     public LoginPage makeValidTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
